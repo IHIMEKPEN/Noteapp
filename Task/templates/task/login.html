@@ -3,19 +3,19 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" action="{% url 'login' %}" method="post">{% csrf_token %}
 				<span class="contact100-form-title">
 					Log-in
 				</span>
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
 					<span class="label-input100">USERNAME *</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Your UserName">
+					<input class="input100" type="text" name="username" placeholder="Enter Your UserName">
 				</div>
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Password Please ">
 					<span class="label-input100">PASSWORD *</span>
-					<input class="input100" type="password" name="name" placeholder="Enter Your Password">
+					<input class="input100" type="password" name="password" placeholder="Enter Your Password">
 				</div>
 
 			

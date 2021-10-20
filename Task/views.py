@@ -12,7 +12,12 @@ def addnotepage(request):
     return render(request,'task/addnotes.html',context)
 
 def login(request):
-    name='john'
+    if request.method =="POST":        
+        username=request.POST['username']   
+        email=request.POST['email']   
+        password1=request.POST['password1']   
+        password2=request.POST['password2'] 
+    
     context={
         'name':name,
     }
