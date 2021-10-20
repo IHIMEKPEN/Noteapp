@@ -4,12 +4,26 @@ from .models import Notes
 # Create your views here.
 
 
-def home(request):
+def addnotepage(request):
     name='john'
     context={
         'name':name,
     }
     return render(request,'task/addnotes.html',context)
+
+def login(request):
+    name='john'
+    context={
+        'name':name,
+    }
+    return render(request,'task/login.html',context)
+
+def logout(request):
+    name='john'
+    context={
+        'name':name,
+    }
+    return redirect('login')
 
 def viewnote(request):    
     notes=Notes.objects.all()      

@@ -6,6 +6,8 @@
 <div class="container-contact100  ">
   {% for note in notes%}
   <div class="wrap-contact100 ">
+    <p id="pra" >created:{{note.created_at}}</p>
+    <p id="pra" >modified:{{note.modified_at}}</p>
     <form class="contact100-form validate-form">
       <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
         <span class="label-input100">Title *</span>
@@ -14,13 +16,7 @@
  
       <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
         <span class="label-input100">Note</span>
-        <textarea class="input100" name="message" placeholder="Your note here...">
-          
-
-            {{note.note}}
-
-          
-        </textarea>
+        <textarea class="input100" name="message" placeholder="Your note here...">{{note.note}}</textarea>
       </div>
 
       <div class="container-contact100-form-btn">
