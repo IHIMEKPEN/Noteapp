@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Notes
+from .models import Notes,Users
 
 # Create your views here.
 
@@ -17,6 +17,18 @@ def login(request):
         'name':name,
     }
     return render(request,'task/login.html',context)
+
+def signup(request):
+    if request.method =="POST":        
+        username=request.POST['username']   
+        email=request.POST['email']   
+        password1=request.POST['password1']   
+        password2=request.POST['password2']   
+        user=Users(username=username,email=email,password1=password1)     
+        user.save()
+        return redirect('viewnote')
+    
+    return render(request,'task/signup.html')
 
 def logout(request):
     name='john'

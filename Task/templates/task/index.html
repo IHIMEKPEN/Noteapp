@@ -69,14 +69,14 @@
 		  </li> -->
 			<li>
 				<a href="{% url 'viewnote' %}">
-					<i class='bx bx-user'></i>
-					<span class="links_name">{{name}}</span>
+					<i class='bx bx-note'></i>
+					<span class="links_name">Your Notes</span>
 				</a>
-				<span class="tooltip">{{name}}</span>
+				<span class="tooltip">Your Notes</span>
 			</li>
 			<li>
 				<a href="{% url 'addnotepage' %}">
-					<i class='bx bx-chat'></i>
+					<i class='bx bx-duplicate'></i>
 					<span class="links_name">Add-Note</span>
 				</a>
 				<span class="tooltip">Add-Note</span>
@@ -89,6 +89,22 @@
 		   </a>
 		   <span class="tooltip">Log-in</span>
 		 </li>
+
+			<li>
+		   <a href="{% url 'signup' %}">
+			 <i class='bx bx-user-plus' ></i>
+			 <span class="links_name">Sign-up</span>
+		   </a>
+		   <span class="tooltip">Sign-up</span>
+		 </li>
+
+			<li>
+		   <a href="#"   >
+			 <i class='bx bx-user' ></i>
+			 <span class="links_name">Welcome, {{name}} </span>
+		   </a>
+		   <!-- <span class="tooltip">Sign-up</span> -->
+		 </li>
 		 
 			<li class="profile">
 				<a href="{% url 'logout' %}">
@@ -97,6 +113,8 @@
 				</a>
 				<span class="tooltip">Log-out</span>
 			</li>
+
+			
 		</ul>
 	</div>
 
