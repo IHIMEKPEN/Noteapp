@@ -5,13 +5,17 @@ from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-@login_required(login_url='task/login.html')
+
 def addnotepage(request):
-    name=request.user.username
-    context={
-        'name':name,
-    }
-    return render(request,'task/addnotes.html',context)
+    if request.user.is_authenticated :
+
+        name=request.user.username
+        context={
+            'name':name,
+        }
+        return render(request,'task/addnotes.html',context)
+    else:
+        return redirect('login')
 
 def loginview(request):
     if request.method =="POST":        
@@ -67,12 +71,14 @@ def logoutview(request):
 
 
 def viewnote(request):  
+    name=request.user.username
+   
     if request.user.is_authenticated :
 
         notes=request.user.noelated.all()      
         context={
             "notes":notes,        
-
+            'name':name,
         }
         return render(request,'task/viewnotes.html',context)
     else:

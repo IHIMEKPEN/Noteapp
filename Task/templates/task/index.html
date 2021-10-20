@@ -46,6 +46,7 @@
 
 <body>
 	<!-- sidebar -->
+	
 
 	<div class="sidebar">
 		<div class="logo-details">
@@ -81,7 +82,7 @@
 				</a>
 				<span class="tooltip">Add-Note</span>
 			</li>
-
+			{% if not user.is_authenticated %}
 			<li>
 		   <a href="{% url 'login' %}">
 			 <i class='bx bx-log-in' ></i>
@@ -97,7 +98,7 @@
 		   </a>
 		   <span class="tooltip">Sign-up</span>
 		 </li>
-
+		 {% else %}
 			<li>
 		   <a href="#"   >
 			 <i class='bx bx-user' ></i>
@@ -114,7 +115,7 @@
 				<span class="tooltip">Log-out</span>
 			</li>
 
-			
+			{% endif %}
 		</ul>
 	</div>
 
