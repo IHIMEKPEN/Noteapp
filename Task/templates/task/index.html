@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>
+		{%block title%}
+
+		{%endblock%}
+	</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'task/images/icons/favicon.ico' %}" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'task/vendor/bootstrap/css/bootstrap.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'task/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"
+		href="{% static 'task/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'task/vendor/animate/animate.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'task/vendor/css-hamburgers/hamburgers.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'task/vendor/animsition/css/animsition.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'task/vendor/select2/select2.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'task/vendor/daterangepicker/daterangepicker.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'task/vendor/noui/nouislider.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'task/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'task/css/main.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" href="{% static 'task/css/style.css' %}">
+
+	<!-- Boxicons CDN Link -->
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<!-- sidebar -->
+
+	<div class="sidebar">
+		<div class="logo-details">
+			<!-- <i class='bx bxl-c-plus-plus icon'></i> -->
+			<!-- <box-icon name='notepad' type='solid' ></box-icon> -->
+			<div class="logo_name">WhilPad</div>
+			<i class='bx bx-menu' id="btn"></i>
+		</div>
+		<ul class="nav-list">
+			<!-- <li>
+			  <i class='bx bx-search' ></i>
+			 <input type="text" placeholder="Search...">
+			 <span class="tooltip">Search</span>
+		  </li> -->
+			<!-- <li>
+			<a href="#">
+			  <i class='bx bx-grid-alt'></i>
+			  <span class="links_name">Dashboard</span>
+			</a>
+			 <span class="tooltip">Dashboard</span>
+		  </li> -->
+			<li>
+				<a href="{% url 'home' %}">
+					<i class='bx bx-user'></i>
+					<span class="links_name">User</span>
+				</a>
+				<span class="tooltip">User</span>
+			</li>
+			<li>
+				<a href="{% url 'viewnote' %}">
+					<i class='bx bx-chat'></i>
+					<span class="links_name">Notes</span>
+				</a>
+				<span class="tooltip">Notes</span>
+			</li>
+
+			<!-- <li>
+		   <a href="#">
+			 <i class='bx bx-log-out' ></i>
+			 <span class="links_name">Log-out</span>
+		   </a>
+		   <span class="tooltip">Log-out</span>
+		 </li> -->
+			<li class="profile">
+				<a href="#">
+					<i class='bx bx-log-out'></i>
+					<span class="links_name">Log-out</span>
+				</a>
+				<span class="tooltip">Log-out</span>
+			</li>
+		</ul>
+	</div>
+
+	<div>
+		{%block body%}
+		{%endblock %}
+	</div>
+
+
+
+
+	<!--===============================================================================================-->
+	<script src="{% static 'task/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'task/vendor/animsition/js/animsition.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'task/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'task/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'task/vendor/select2/select2.min.js' %}"></script>
+	<script>
+		$(".js-select2").each(function () {
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+
+
+			$(".js-select2").each(function () {
+				$(this).on('select2:close', function (e) {
+					if ($(this).val() == "Please chooses") {
+						$('.js-show-service').slideUp();
+					}
+					else {
+						$('.js-show-service').slideUp();
+						$('.js-show-service').slideDown();
+					}
+				});
+			});
+		})
+	</script>
+	<!--===============================================================================================-->
+	<script src="{% static 'task/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'task/vendor/daterangepicker/daterangepicker.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'task/vendor/countdowntime/countdowntime.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'task/vendor/noui/nouislider.min.js' %}"></script>
+	<script>
+		var filterBar = document.getElementById('filter-bar');
+
+		noUiSlider.create(filterBar, {
+			start: [1500, 3900],
+			connect: true,
+			range: {
+				'min': 1500,
+				'max': 7500
+			}
+		});
+
+		var skipValues = [
+			document.getElementById('value-lower'),
+			document.getElementById('value-upper')
+		];
+
+		filterBar.noUiSlider.on('update', function (values, handle) {
+			skipValues[handle].innerHTML = Math.round(values[handle]);
+			$('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
+			$('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
+		});
+	</script>
+	<!--===============================================================================================-->
+	<script src="{% static 'task/js/main.js' %}"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-23581568-13');
+	</script>
+	<script src="{% static 'task/js/script.js' %}"></script>
+
+</body>
+
+</html>
