@@ -1,61 +1,90 @@
 from django.shortcuts import render,redirect
-from .models import Notes,Users
-
+from .models import Notes,User
+from django.contrib.auth import authenticate, login, logout
+from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+@login_required(login_url='task/login.html')
 def addnotepage(request):
-    name='john'
+    name=request.user.username
     context={
         'name':name,
     }
     return render(request,'task/addnotes.html',context)
 
-def login(request):
+def loginview(request):
     if request.method =="POST":        
-        username=request.POST['username']   
-        email=request.POST['email']   
-        password1=request.POST['password1']   
-        password2=request.POST['password2'] 
+        username=request.POST['username']          
+        password=request.POST['password']           
+        user = authenticate(request, username=username, password=password)
+        
+         # Check if authentication successful
+        if user is not None:
+            login(request,user)
+            return redirect('viewnote')
+        else:
+             return render(request,'task/login.html', {
+                "message": "Invalid username and/or password."
+            })
+    else:
+        return render(request, "task/login.html")
     
-    context={
-        'name':name,
-    }
-    return render(request,'task/login.html',context)
+   
+    
 
 def signup(request):
     if request.method =="POST":        
         username=request.POST['username']   
         email=request.POST['email']   
-        password1=request.POST['password1']   
-        password2=request.POST['password2']   
-        user=Users(username=username,email=email,password1=password1)     
-        user.save()
-        return redirect('viewnote')
-    
-    return render(request,'task/signup.html')
+        password=request.POST['password1']   
+        confirmation=request.POST['password2']   
 
-def logout(request):
-    name='john'
-    context={
-        'name':name,
-    }
+        if password != confirmation:
+            return render(request, "task/signup.html", {
+                "message": "Passwords must match."
+            })
+
+         # Attempt to create new user
+        try:
+            user = User.objects.create_user(username, email, password)
+            user.save()
+        except IntegrityError:
+            return render(request, "task/signup.html", {
+                "message": "Username already taken."
+            })
+        login(request,user)
+        return redirect('viewnote')
+    else:
+        return render(request, "task/signup.html")
+        
+    
+  
+
+def logoutview(request):
+    logout(request)
     return redirect('login')
 
-def viewnote(request):    
-    notes=Notes.objects.all()      
-    context={
-        "notes":notes,        
 
-    }
-    return render(request,'task/viewnotes.html',context)
+def viewnote(request):  
+    if request.user.is_authenticated :
+
+        notes=request.user.noelated.all()      
+        context={
+            "notes":notes,        
+
+        }
+        return render(request,'task/viewnotes.html',context)
+    else:
+        return redirect('login')
 
 #handle functionaly of adding note
 def addnote(request):
     if request.method =="POST":        
         msg=request.POST['message']   
         title=request.POST['title']   
-        notes=Notes(note=msg,title=title)     
+        notes=Notes(note=msg,title=title,user=request.user) 
+            
         notes.save()
 
     return redirect('viewnote')

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class Notes(models.Model):
@@ -6,14 +7,12 @@ class Notes(models.Model):
     note=models.TextField(blank=True,null=True)
     created_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
     modified_at = models.DateTimeField(auto_now=True,blank=True,null=True)
+    user=models.ForeignKey('User' ,on_delete=models.CASCADE,related_name='noelated',null=True)
 
    
 
-class Users(models.Model):
-    name=models.CharField(max_length=100,blank=True)
-    username=models.CharField(max_length=100,blank=True)
-    password=models.CharField(max_length=100,blank=True)
-    email=models.CharField(max_length=100,blank=True)
+class User(AbstractUser):
+    pass
 
    
     
