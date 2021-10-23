@@ -29,3 +29,29 @@ function menuBtnChangecustom() {
    closeBtn.classList.replace("sidebarcustom","sidebar");//replacing the iocns class
  }
 }
+
+
+	/*-----------------------------------------------------*/
+  	/* Navigation Menu
+   ------------------------------------------------------ */  
+  var toggleButton = $('.logo-details'),
+       nav = $('.nav-list');
+
+   // toggle button
+   toggleButton.on('click', function(e) {
+
+		e.preventDefault();
+		toggleButton.toggleClass('is-clicked');
+		nav.slideToggle();
+
+	});
+
+   // nav items
+  	nav.find('li a').on("click", function() {   
+
+   	// update the toggle button 		
+   	toggleButton.toggleClass('is-clicked'); 
+   	// fadeout the navigation panel
+   	nav.fadeOut();   		
+   	     
+  	});
