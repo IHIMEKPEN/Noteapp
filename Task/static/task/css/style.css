@@ -254,7 +254,7 @@
 @media (max-width: 500px) {
   
   .sidebar{
-    display: none;
+    /* display: none; */
     position: fixed;
     overflow: hidden;
     top: 0;
