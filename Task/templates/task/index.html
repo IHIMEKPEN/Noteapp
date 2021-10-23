@@ -50,24 +50,10 @@
 
 	<div class="sidebar">
 		<div class="logo-details">
-			<!-- <i class='bx bxl-c-plus-plus icon'></i> -->
-			<!-- <box-icon name='notepad' type='solid' ></box-icon> -->
 			<div class="logo_name">WhilPad</div>
 			<i class='bx bx-menu' id="btn"></i>
 		</div>
 		<ul class="nav-list">
-			<!-- <li>
-			  <i class='bx bx-search' ></i>
-			 <input type="text" placeholder="Search...">
-			 <span class="tooltip">Search</span>
-		  </li> -->
-			<!-- <li>
-			<a href="#">
-			  <i class='bx bx-grid-alt'></i>
-			  <span class="links_name">Dashboard</span>
-			</a>
-			 <span class="tooltip">Dashboard</span>
-		  </li> -->
 			<li>
 				<a href="{% url 'viewnote' %}">
 					<i class='bx bx-note'></i>
@@ -104,7 +90,7 @@
 			 <i class='bx bx-user' ></i>
 			 <span class="links_name">Welcome, {{name}} </span>
 		   </a>
-		   <!-- <span class="tooltip">Sign-up</span> -->
+		   
 		 </li>
 		 
 			<li class="profile">
@@ -136,27 +122,10 @@
 	<script src="{% static 'task/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 	<!--===============================================================================================-->
 	<script src="{% static 'task/vendor/select2/select2.min.js' %}"></script>
-	<script>
-		$(".js-select2").each(function () {
-			$(this).select2({
-				minimumResultsForSearch: 20,
-				dropdownParent: $(this).next('.dropDownSelect2')
-			});
+	<!--===============================================================================================-->
+	<script src="{% static 'task/js/inline.js' %}"></script>
 
-
-			$(".js-select2").each(function () {
-				$(this).on('select2:close', function (e) {
-					if ($(this).val() == "Please chooses") {
-						$('.js-show-service').slideUp();
-					}
-					else {
-						$('.js-show-service').slideUp();
-						$('.js-show-service').slideDown();
-					}
-				});
-			});
-		})
-	</script>
+	
 	<!--===============================================================================================-->
 	<script src="{% static 'task/vendor/daterangepicker/moment.min.js' %}"></script>
 	<script src="{% static 'task/vendor/daterangepicker/daterangepicker.js' %}"></script>
@@ -164,7 +133,7 @@
 	<script src="{% static 'task/vendor/countdowntime/countdowntime.js' %}"></script>
 	<!--===============================================================================================-->
 	<script src="{% static 'task/vendor/noui/nouislider.min.js' %}"></script>
-	<script>
+	<!-- <script>
 		var filterBar = document.getElementById('filter-bar');
 
 		noUiSlider.create(filterBar, {
@@ -186,19 +155,19 @@
 			$('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
 			$('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
 		});
-	</script>
+	</script> -->
 	<!--===============================================================================================-->
 	<script src="{% static 'task/js/main.js' %}"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
+	<!-- <script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 
 		gtag('config', 'UA-23581568-13');
-	</script>
+	</script> -->
 	<script src="{% static 'task/js/script.js' %}"></script>
 
 </body>
