@@ -20,3 +20,12 @@ function menuBtnChange() {
    closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
  }
 }
+
+// following are the code to change sidebar button(optional)
+function menuBtnChangecustom() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("sidebar", "sidebarcustom");//replacing the iocns class
+ }else {
+   closeBtn.classList.replace("sidebarcustom","sidebar");//replacing the iocns class
+ }
+}
