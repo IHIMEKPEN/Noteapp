@@ -258,7 +258,7 @@
     position: fixed;
     /* left: 0; */
     top: 0;
-    width: 78px;
+    width: 100%;
     height: 78px;
     background: #09090f;
     padding: 6px 14px;
