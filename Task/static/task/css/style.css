@@ -287,7 +287,7 @@
     transition: all 0.5s ease;
   } */
 
-  .logo-details{
+  .sidebar.open .logo-details #btn{
     display: none;
   }
 }
