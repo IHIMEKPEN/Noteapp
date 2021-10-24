@@ -274,6 +274,7 @@
     z-index: 99;
     transition: all 0.5s ease;
   }
+<<<<<<< HEAD
   .sidebar .profile #log_out{
     position: absolute;
     top: 50%;
@@ -286,6 +287,9 @@
     border-radius: 0px;
     transition: all 0.5s ease;
   } */
+=======
+ 
+>>>>>>> parent of 1e83562 (color of log out)
 
   .sidebar.open .logo-details #btn{
     display: none;
