@@ -21,37 +21,37 @@ function menuBtnChange() {
  }
 }
 
-// following are the code to change sidebar button(optional)
-function menuBtnChangecustom() {
- if(sidebar.classList.contains("open")){
-   closeBtn.classList.replace("sidebar", "sidebarcustom");//replacing the iocns class
- }else {
-   closeBtn.classList.replace("sidebarcustom","sidebar");//replacing the iocns class
- }
-}
+// // following are the code to change sidebar button(optional)
+// function menuBtnChangecustom() {
+//  if(sidebar.classList.contains("open")){
+//    closeBtn.classList.replace("sidebar", "sidebarcustom");//replacing the iocns class
+//  }else {
+//    closeBtn.classList.replace("sidebarcustom","sidebar");//replacing the iocns class
+//  }
+// }
 
 
-	/*-----------------------------------------------------*/
-  	/* Navigation Menu
-   ------------------------------------------------------ */  
-  var toggleButton = $('.logo-details'),
-       nav = $('.nav-list');
+	// /*-----------------------------------------------------*/
+  // 	/* Navigation Menu
+  //  ------------------------------------------------------ */  
+  // var toggleButton = $('.logo-details'),
+  //      nav = $('.nav-list');
 
-   // toggle button
-   toggleButton.on('click', function(e) {
+  //  // toggle button
+  //  toggleButton.on('click', function(e) {
 
-		e.preventDefault();
-		toggleButton.toggleClass('is-clicked');
-		nav.slideToggle();
+	// 	e.preventDefault();
+	// 	toggleButton.toggleClass('is-clicked');
+	// 	nav.slideToggle();
 
-	});
+	// });
 
-   // nav items
-  	nav.find('li a').on("click", function() {   
+  //  // nav items
+  // 	nav.find('li a').on("click", function() {   
 
-   	// update the toggle button 		
-   	toggleButton.toggleClass('is-clicked'); 
-   	// fadeout the navigation panel
-   	nav.fadeOut();   		
+  //  	// update the toggle button 		
+  //  	toggleButton.toggleClass('is-clicked'); 
+  //  	// fadeout the navigation panel
+  //  	nav.fadeOut();   		
    	     
-  	});
+  // 	});
