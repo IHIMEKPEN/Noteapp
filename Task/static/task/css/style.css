@@ -259,9 +259,10 @@
     padding: 6px 14px;
     z-index: 99;
     transition: all 0.5s ease;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(5,1fr);
     grid-gap: auto;
+    justify-content: space-between;
   }
   /* .sidebarcustom{
     position: fixed;
@@ -274,7 +275,7 @@
     z-index: 99;
     transition: all 0.5s ease;
   }
-<<<<<<< HEAD
+
   .sidebar .profile #log_out{
     position: absolute;
     top: 50%;
@@ -287,11 +288,11 @@
     border-radius: 0px;
     transition: all 0.5s ease;
   } */
-=======
- 
->>>>>>> parent of 1e83562 (color of log out)
 
-  .sidebar.open .logo-details #btn{
+ 
+
+
+  /* .sidebar.open .logo-details #btn{
     display: none;
-  }
+  } */
 }
