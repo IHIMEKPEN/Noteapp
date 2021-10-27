@@ -46,7 +46,7 @@
 
 <body>
 	<!-- sidebar -->
-	
+
 
 	<div class="sidebar">
 		<div class="logo-details">
@@ -70,29 +70,29 @@
 			</li>
 			{% if not user.is_authenticated %}
 			<li>
-		   <a href="{% url 'login' %}">
-			 <i class='bx bx-log-in' ></i>
-			 <span class="links_name">Log-in</span>
-		   </a>
-		   <span class="tooltip">Log-in</span>
-		 </li>
+				<a href="{% url 'login' %}">
+					<i class='bx bx-log-in'></i>
+					<span class="links_name">Log-in</span>
+				</a>
+				<span class="tooltip">Log-in</span>
+			</li>
 
 			<li>
-		   <a href="{% url 'signup' %}">
-			 <i class='bx bx-user-plus' ></i>
-			 <span class="links_name">Sign-up</span>
-		   </a>
-		   <span class="tooltip">Sign-up</span>
-		 </li>
-		 {% else %}
+				<a href="{% url 'signup' %}">
+					<i class='bx bx-user-plus'></i>
+					<span class="links_name">Sign-up</span>
+				</a>
+				<span class="tooltip">Sign-up</span>
+			</li>
+			{% else %}
 			<li>
-		   <a href="#"   >
-			 <i class='bx bx-user' ></i>
-			 <span class="links_name">Welcome, {{name}} </span>
-		   </a>
-		   
-		 </li>
-		 
+				<a href="#">
+					<i class='bx bx-user'></i>
+					<span class="links_name">Welcome, {{name}} </span>
+				</a>
+
+			</li>
+
 			<li class="profile">
 				<a href="{% url 'logout' %}">
 					<i class='bx bx-log-out'></i>
@@ -125,7 +125,7 @@
 	<!--===============================================================================================-->
 	<script src="{% static 'task/js/inline.js' %}"></script>
 
-	
+
 	<!--===============================================================================================-->
 	<script src="{% static 'task/vendor/daterangepicker/moment.min.js' %}"></script>
 	<script src="{% static 'task/vendor/daterangepicker/daterangepicker.js' %}"></script>
